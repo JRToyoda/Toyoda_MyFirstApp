@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Toyoda_MyFirstApp</string>
-    <string name="Aswang">Ipis music player</string>
-    <string name="Play">Play</string>
+    <string name="Aswang">Kill the Cockroach</string>
+    <string name="Kill">Kill It</string>
+    <string name="revive">Revive</string>
     <string name="Description">Ghost</string>
 </resources>
