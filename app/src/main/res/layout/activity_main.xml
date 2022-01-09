@@ -20,21 +20,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Kill"
-        android:textColor="@color/white"
+        android:layout_marginTop="12dp"
+        android:text="@string/Play"
         android:textSize="25sp"
+        android:backgroundTint="@color/teal_200"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/Description"
         app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -42,5 +45,7 @@
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/deedee" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
