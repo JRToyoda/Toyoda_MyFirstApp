@@ -60,32 +60,28 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer.start();
     }
 
-    private void stopPlayer() {
-        if (mediaPlayer2 != null) {
-            mediaPlayer2.stop();
-        }
-    }
-
     //button2 output
     private void revive() {
         deedee.setImageResource(R.drawable.deedee);
     }
 
     private void openMedia2() {
-        mediaPlayer2 = new MediaPlayer();
-        mediaPlayer2 = MediaPlayer.create(this, R.raw.revive);
-        mediaPlayer2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        mediaPlayer = new MediaPlayer();
+        mediaPlayer = MediaPlayer.create(this, R.raw.revive);
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                stopPlayer2();
+                stopPlayer();
             }
         });
-        mediaPlayer2.start();
+        mediaPlayer.start();
     }
 
-    private void stopPlayer2() {
+    //stop
+    private void stopPlayer() {
         if (mediaPlayer != null) {
-            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 }
