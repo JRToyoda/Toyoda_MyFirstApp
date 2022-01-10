@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Toyoda_MyFirstApp</string>
-    <string name="Aswang">Kill the Cockroach</string>
-    <string name="Kill">Kill It</string>
+    <string name="text">Kill the Cockroach</string>
+    <string name="kill">Kill It</string>
     <string name="revive">Revive</string>
-    <string name="Description">Ghost</string>
+    <string name="description">Ghost</string>
 </resources>
