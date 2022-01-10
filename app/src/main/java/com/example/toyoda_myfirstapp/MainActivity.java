@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openMedia() {
         mediaPlayer = new MediaPlayer();
-        mediaPlayer = MediaPlayer.create(this, R.raw.Kill);
+        mediaPlayer = MediaPlayer.create(this, R.raw.kill);
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
