@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private void kill() {
         deedee.setImageResource(R.drawable.deead);
     }
+
     private void openMedia() {
         mediaPlayer = new MediaPlayer();
         mediaPlayer = MediaPlayer.create(this, R.raw.kill);
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
         mediaPlayer.start();
     }
+
     private void stopPlayer() {
         if (mediaPlayer2 != null) {
             mediaPlayer2.stop();
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     private void revive() {
         deedee.setImageResource(R.drawable.deedee);
     }
+
     private void openMedia2() {
         mediaPlayer2 = new MediaPlayer();
         mediaPlayer2 = MediaPlayer.create(this, R.raw.revive);
@@ -79,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         });
         mediaPlayer2.start();
     }
+
     private void stopPlayer2() {
         if (mediaPlayer != null) {
             mediaPlayer.stop();
