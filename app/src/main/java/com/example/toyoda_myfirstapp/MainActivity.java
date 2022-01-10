@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView deedee;
     MediaPlayer mediaPlayer;
+    MediaPlayer mediaPlayer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private void openMedia() {
         mediaPlayer = new MediaPlayer();
         mediaPlayer = MediaPlayer.create(this, R.raw.kill);
-        mediaPlayer.setOnCompletionListener(mediaPlayer -> stopPlayer());
+        mediaPlayer.setOnCompletionListener(mediaPlayer2 -> stopPlayer());
         mediaPlayer.start();
     }
 
@@ -52,14 +53,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openMedia2() {
-        mediaPlayer = new MediaPlayer();
-        mediaPlayer = MediaPlayer.create(this, R.raw.revive);
-        mediaPlayer.setOnCompletionListener(mediaPlayer -> stopPlayer());
-        mediaPlayer.start();
+        mediaPlayer2 = new MediaPlayer();
+        mediaPlayer2 = MediaPlayer.create(this, R.raw.revive);
+        mediaPlayer2.setOnCompletionListener(mediaPlayer -> stopPlayer2());
+        mediaPlayer2.start();
     }
 
     //stop
     private void stopPlayer() {
+        if (mediaPlayer2 != null) {
+            mediaPlayer2.release();
+            mediaPlayer2 = null;
+        }
+    }
+
+    private void stopPlayer2() {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
