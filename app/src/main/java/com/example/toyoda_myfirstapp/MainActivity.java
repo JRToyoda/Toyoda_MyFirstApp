@@ -1,20 +1,17 @@
 package com.example.toyoda_myfirstapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
 
     ImageView deedee;
     MediaPlayer mediaPlayer;
-    MediaPlayer mediaPlayer2;
-    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,23 +20,17 @@ public class MainActivity extends AppCompatActivity {
 
         //button input
         deedee = findViewById(R.id.imageView1);
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                kill();
-                openMedia();
-            }
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(v -> {
+            kill();
+            openMedia();
         });
 
         //button2 input
         button = findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                revive();
-                openMedia2();
-            }
+        button.setOnClickListener(v -> {
+            revive();
+            openMedia2();
         });
     }
 
@@ -51,12 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private void openMedia() {
         mediaPlayer = new MediaPlayer();
         mediaPlayer = MediaPlayer.create(this, R.raw.kill);
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                stopPlayer();
-            }
-        });
+        mediaPlayer.setOnCompletionListener(mediaPlayer -> stopPlayer());
         mediaPlayer.start();
     }
 
@@ -68,12 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private void openMedia2() {
         mediaPlayer = new MediaPlayer();
         mediaPlayer = MediaPlayer.create(this, R.raw.revive);
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                stopPlayer();
-            }
-        });
+        mediaPlayer.setOnCompletionListener(mediaPlayer -> stopPlayer());
         mediaPlayer.start();
     }
 
